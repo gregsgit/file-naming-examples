@@ -54,9 +54,21 @@ The first thing is to clean up code-to-bird.txt. I did:
 4. Got rid of "'" (single quotes).
 5. God rid of weird unicode character, "ÿ"
 
-Finally, I replaced "," with " " (space) so that can use bash's built-in "read" function.
+Finally, I replaced "," with " " (space) so that can use bash's
+built-in "read" function. 
 
-The script to read `code-to-bird.txt` and generate a script named `do-copies.sh` is pretty simple:
+At this point, `code-to-bird.txt` looks like:
+
+```
+70200 Forestwagtail
+178590 Forestwagtail
+207515 RosyStarling
+```
+
+# Bash script to read code-to-bird and generate do-copies.sh
+
+The script to read `code-to-bird.txt` and generate a script named
+`do-copies.sh` is pretty simple: 
 
 ```
 #!/usr/bin/env bash
@@ -78,3 +90,9 @@ cp 178590.WAV ../renamed-files/Forestwagtail-178590.WAV
 cp 207515.WAV ../renamed-files/RosyStarling-207515.WAV
 ```
 
+At this point, I `cd` to the folder containing the numbered files,
+e.g. `cd ../../songfiles` and run the do-copies.sh script,
+
+```
+../../../file-naming-examples/do-copies.sh
+```
